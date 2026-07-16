@@ -1,4 +1,5 @@
 const CONTACT_EMAIL = "y.k199xtbma@gmail.com";
+const X_URL = "https://x.com/YKDigitalWorks";
 
 type Work = {
   title: string;
@@ -155,7 +156,7 @@ export default function Home() {
       <header className="sticky top-0 z-10 border-b border-line bg-paper/85 backdrop-blur-sm">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
           <a href="#" className="font-serif text-lg tracking-wide">
-            Yoshimichi
+            YK Digital Works
           </a>
           <nav className="flex gap-6">
             {navItems.map((item) => (
@@ -265,21 +266,38 @@ export default function Home() {
             アプリ開発のご依頼・ご相談は、メールでお気軽にご連絡ください。
             アイデアの段階からでも、一緒に形を考えます。
           </p>
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="link-underline mt-8 inline-block font-mono text-lg sm:text-xl"
-          >
-            {CONTACT_EMAIL}
-          </a>
+          <div className="mt-8 flex flex-col gap-4">
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="link-underline inline-block self-start font-mono text-lg sm:text-xl"
+            >
+              {CONTACT_EMAIL}
+            </a>
+            <a
+              href={X_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-underline inline-block self-start font-mono text-sm text-muted"
+            >
+              X: @YKDigitalWorks ↗
+            </a>
+          </div>
         </section>
       </main>
 
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-8">
           <p className="font-mono text-xs text-muted">
-            © {new Date().getFullYear()} Yoshimichi
+            © {new Date().getFullYear()} YK Digital Works
           </p>
-          <p className="font-mono text-xs text-muted">Based in Japan — JST</p>
+          <a
+            href={X_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs text-muted transition-colors hover:text-accent"
+          >
+            @YKDigitalWorks
+          </a>
         </div>
       </footer>
     </>
