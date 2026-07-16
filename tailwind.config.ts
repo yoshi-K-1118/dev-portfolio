@@ -9,14 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0f0f0f",
-        card: "#1a1a1a",
+        paper: "var(--bg)",
+        ink: "var(--ink)",
+        muted: "var(--muted)",
+        line: "var(--line)",
+        accent: "var(--accent)",
       },
       fontFamily: {
-        sans: ["var(--font-noto-sans-jp)", "sans-serif"],
-      },
-      backgroundImage: {
-        "accent-gradient": "linear-gradient(135deg, #6366f1, #8b5cf6)",
+        sans: ["var(--font-sans)", "sans-serif"],
+        serif: ["var(--font-serif)", "serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
     },
   },

@@ -1,261 +1,287 @@
-import { ArrowUpRight, Mail, Smartphone, Globe } from "lucide-react";
-
 const CONTACT_EMAIL = "y.k199xtbma@gmail.com";
 
 type Work = {
   title: string;
+  category: string;
   description: string;
   url: string;
-  tag: string;
   tech: string[];
+  linkLabel: string;
 };
 
-const iosWorks: Work[] = [
+const works: Work[] = [
   {
-    title: "Glowmi — AIスキンケア記録",
+    title: "Glowmi",
+    category: "iOS — AIスキンケア記録",
     description:
-      "朝晩のスキンケアを写真・メモで記録し、Claude AIが肌状態を分析してアドバイス。7日間・月間グラフ、RevenueCat課金、4言語対応。",
+      "朝晩のスキンケアを写真とメモで記録し、Claude AIが肌の状態を分析してアドバイスするアプリ。7日間・月間のグラフ表示、RevenueCatによるサブスクリプション課金、4言語対応。",
     url: "https://apps.apple.com/app/glowmi-ai%E8%82%8C%E8%A8%BA%E6%96%AD-%E5%B0%8F%E9%A1%94%E7%BF%92%E6%85%A3/id6763681880",
-    tag: "iOSアプリ",
     tech: ["SwiftUI", "Claude API", "RevenueCat", "SwiftData"],
+    linkLabel: "App Store",
   },
   {
     title: "めしろぐ",
+    category: "iOS — 食事ログ",
     description:
-      "食事を写真に撮るだけでAIがカロリーと食費を自動記録。栄養バランスと家計を同時に管理できる食事ログアプリ。",
+      "食事を写真に撮るだけで、AIがカロリーと食費を自動で記録。栄養バランスと家計をひとつのアプリで同時に管理できる。",
     url: "https://apps.apple.com/app/%E3%82%81%E3%81%97%E3%82%8D%E3%81%90/id6761912060",
-    tag: "iOSアプリ",
     tech: ["SwiftUI", "Vision", "Core Data"],
+    linkLabel: "App Store",
   },
   {
     title: "Gomidashi",
+    category: "iOS — ゴミ出しリマインダー",
     description:
-      "ゴミ収集日を曜日・週指定（毎週・第1〜4週）で登録。今日出せるゴミを即確認できる生活便利アプリ。",
+      "ゴミ収集日を曜日・週（毎週・第1〜4週）で登録し、今日出せるゴミをひと目で確認できる生活アプリ。",
     url: "https://apps.apple.com/jp/app/gomidashi/id6760887454",
-    tag: "iOSアプリ",
     tech: ["SwiftUI", "SwiftData"],
+    linkLabel: "App Store",
   },
   {
     title: "禁煙くん",
+    category: "iOS — 禁煙サポート",
     description:
-      "銘柄ごとの価格を登録し、禁煙で節約できる金額をリアルタイムで計算。禁煙継続をお金の面からサポート。",
+      "銘柄ごとのタバコ価格を登録し、禁煙によって節約できた金額をリアルタイムに計算。お金の面から禁煙の継続を後押しする。",
     url: "https://apps.apple.com/jp/app/%E7%A6%81%E7%85%99%E3%81%8F%E3%82%93/id6760255111",
-    tag: "iOSアプリ",
     tech: ["SwiftUI", "Google AdMob"],
+    linkLabel: "App Store",
   },
   {
     title: "FaceNote",
+    category: "iOS — 商談・会議メモ",
     description:
-      "名刺画像付きで商談・会議メモを管理。カレンダービューで過去の面談を振り返れるビジネスパーソン向けメモアプリ。",
+      "名刺の画像とあわせて商談や会議のメモを管理。カレンダービューで過去の面談を振り返れる、ビジネスパーソン向けのメモアプリ。",
     url: "https://apps.apple.com/jp/app/facenote/id6760473491",
-    tag: "iOSアプリ",
     tech: ["SwiftUI", "SwiftData", "PhotosUI"],
+    linkLabel: "App Store",
   },
-];
-
-const webWorks: Work[] = [
   {
-    title: "影響力の法則 — チャルディーニ実践ガイド",
+    title: "影響力の法則",
+    category: "Web — 学習アプリ",
     description:
       "チャルディーニの6つの説得原則をインタラクティブに学べるWebアプリ。各原則の解説・演習・実践例を収録。",
     url: "https://cialdini-app.vercel.app/",
-    tag: "Webアプリ",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    linkLabel: "サイトを見る",
   },
   {
     title: "ポイント最適化ダッシュボード",
+    category: "Web — 家計ツール",
     description:
-      "各種ポイントの残高・交換レート・有効期限を一元管理。最もお得な使い方をダッシュボードで提案するアプリ。",
+      "各種ポイントの残高・交換レート・有効期限を一元管理し、最も得な使い方をダッシュボードで提案する。",
     url: "https://point-optimizer-one.vercel.app/dashboard",
-    tag: "Webアプリ",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    linkLabel: "サイトを見る",
   },
 ];
 
-const stats = [
-  { value: "5", label: "App Store公開" },
-  { value: "7", label: "リリース済みアプリ" },
-  { value: "4", label: "対応言語（多言語）" },
+const skills = [
+  {
+    title: "iOSアプリ開発",
+    description:
+      "SwiftUIを中心に、サブスクリプション課金・広告・多言語対応まで含めて、ストアに出せる品質のアプリをつくります。審査対応やリリース後の改善も一人で回してきました。",
+    items: [
+      "SwiftUI",
+      "SwiftData",
+      "StoreKit / RevenueCat",
+      "Google AdMob",
+      "XcodeGen",
+      "App Store審査対応",
+    ],
+  },
+  {
+    title: "Webアプリ開発",
+    description:
+      "LPから業務ツール、AIチャットボットまで。Next.jsとVercelで、設計からデプロイ・運用までを対応します。Claude APIを使ったAI機能の組み込みも得意です。",
+    items: [
+      "Next.js / React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "Vercel",
+      "Claude API",
+    ],
+  },
 ];
 
-function WorkCard({ work }: { work: Work }) {
-  const isAppStore = work.url.includes("apps.apple.com");
+const navItems = [
+  { href: "#works", label: "Works" },
+  { href: "#skills", label: "Skills" },
+  { href: "#contact", label: "Contact" },
+];
+
+function WorkRow({ work, index }: { work: Work; index: number }) {
   return (
-    <div className="card-hover flex flex-col bg-[#161616] rounded-2xl p-6 border border-white/5">
-      <div className="mb-4">
-        <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-violet-500/15 text-violet-300 border border-violet-500/20">
-          {work.tag}
-        </span>
-      </div>
-      <h3 className="text-lg font-bold mb-3 leading-snug">{work.title}</h3>
-      <p className="text-gray-400 text-sm leading-relaxed flex-1">
-        {work.description}
-      </p>
-      <div className="mt-4 flex flex-wrap gap-2">
-        {work.tech.map((t) => (
-          <span
-            key={t}
-            className="text-xs px-2 py-0.5 rounded bg-white/5 text-gray-400 border border-white/10"
-          >
-            {t}
-          </span>
-        ))}
-      </div>
+    <li className="border-t border-line">
       <a
         href={work.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-violet-400 hover:text-violet-300 transition-colors"
+        className="group grid gap-y-3 py-9 sm:grid-cols-[3.5rem_1fr_auto] sm:gap-x-6"
       >
-        {isAppStore ? "App Storeで見る" : "デモを見る"}
-        <ArrowUpRight size={16} />
+        <span className="font-mono text-sm text-muted pt-1">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <div className="max-w-2xl">
+          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+            <h3 className="font-serif text-xl sm:text-2xl transition-colors group-hover:text-accent">
+              {work.title}
+            </h3>
+            <span className="font-mono text-xs text-muted tracking-wide">
+              {work.category}
+            </span>
+          </div>
+          <p className="mt-3 text-[15px] leading-7 text-muted">
+            {work.description}
+          </p>
+          <p className="mt-3 font-mono text-xs text-muted/80">
+            {work.tech.join(" · ")}
+          </p>
+        </div>
+        <span className="hidden sm:flex items-start pt-1 font-mono text-sm text-muted transition-all group-hover:text-accent group-hover:translate-x-1">
+          {work.linkLabel} ↗
+        </span>
+        <span className="sm:hidden font-mono text-xs text-accent">
+          {work.linkLabel} ↗
+        </span>
       </a>
-    </div>
-  );
-}
-
-function SkillCard({ title, items }: { title: string; items: string[] }) {
-  return (
-    <div className="bg-[#161616] rounded-2xl p-6 border border-white/5">
-      <h3 className="font-bold mb-4 text-gray-200">{title}</h3>
-      <div className="flex flex-wrap gap-2">
-        {items.map((item) => (
-          <span
-            key={item}
-            className="text-sm px-3 py-1 rounded-lg bg-violet-500/10 text-violet-300 border border-violet-500/20"
-          >
-            {item}
-          </span>
-        ))}
-      </div>
-    </div>
+    </li>
   );
 }
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white">
-      {/* Hero */}
-      <section className="relative flex flex-col items-center justify-center min-h-screen px-6 py-24 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-violet-950/30 via-transparent to-indigo-950/20 pointer-events-none" />
-        <div className="relative max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full text-sm font-medium border border-violet-500/30 bg-violet-500/10 text-violet-300">
-            <Smartphone size={14} />
-            iOS / Webエンジニア
-          </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
-            アプリを作り、
+    <>
+      <header className="sticky top-0 z-10 border-b border-line bg-paper/85 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+          <a href="#" className="font-serif text-lg tracking-wide">
+            Yoshimichi
+          </a>
+          <nav className="flex gap-6">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="font-mono text-xs uppercase tracking-widest text-muted transition-colors hover:text-accent"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </header>
+
+      <main className="mx-auto max-w-4xl px-6">
+        {/* Hero */}
+        <section className="pt-24 pb-20 sm:pt-36 sm:pb-28">
+          <p className="fade-up font-mono text-xs uppercase tracking-[0.25em] text-accent">
+            iOS &amp; Web Developer
+          </p>
+          <h1 className="fade-up mt-6 font-serif text-[1.9rem] leading-snug sm:text-5xl sm:leading-snug">
+            アイデアから、
             <br />
-            <span className="text-gradient">App Storeに届ける。</span>
+            App&nbsp;Storeまで届ける。
           </h1>
-          <p className="text-lg sm:text-xl text-gray-400 mb-10 leading-relaxed">
-            iOSアプリ・Webアプリを個人開発でリリースしてきたフリーランスエンジニアです。
-            <br className="hidden sm:block" />
-            SwiftUI から Next.js まで、企画から公開まで一気通貫で対応します。
+          <p className="fade-up-delay-1 mt-8 max-w-xl text-[15px] leading-8 text-muted">
+            SwiftUIによるiOSアプリと、Next.jsによるWebアプリを個人開発でつくっているフリーランスエンジニアです。
+            企画・設計・開発からストア申請、リリース後の改善まで、一人で完結して手がけます。
+          </p>
+          <p className="fade-up-delay-1 mt-8 font-mono text-xs text-muted tracking-wide">
+            App Store公開 5本 <span className="text-line">/</span> リリース済み
+            7本 <span className="text-line">/</span> 多言語対応 4言語
+          </p>
+          <div className="fade-up-delay-2 mt-10 flex flex-wrap gap-x-8 gap-y-3">
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="link-underline text-[15px] font-medium"
+            >
+              開発の相談をする ↗
+            </a>
+            <a href="#works" className="link-underline text-[15px] text-muted">
+              制作実績を見る ↓
+            </a>
+          </div>
+        </section>
+
+        {/* Works */}
+        <section id="works" className="pb-24 scroll-mt-20">
+          <div className="mb-10 flex items-baseline gap-4">
+            <h2 className="font-serif text-2xl sm:text-3xl">制作実績</h2>
+            <span className="font-mono text-xs uppercase tracking-widest text-muted">
+              Works
+            </span>
+          </div>
+          <ul>
+            {works.map((work, i) => (
+              <WorkRow key={work.title} work={work} index={i} />
+            ))}
+          </ul>
+        </section>
+
+        {/* Skills */}
+        <section id="skills" className="border-t border-line py-24 scroll-mt-20">
+          <div className="mb-12 flex items-baseline gap-4">
+            <h2 className="font-serif text-2xl sm:text-3xl">できること</h2>
+            <span className="font-mono text-xs uppercase tracking-widest text-muted">
+              Skills
+            </span>
+          </div>
+          <div className="grid gap-12 sm:grid-cols-2 sm:gap-16">
+            {skills.map((skill) => (
+              <div key={skill.title}>
+                <h3 className="font-serif text-xl">{skill.title}</h3>
+                <p className="mt-4 text-[15px] leading-8 text-muted">
+                  {skill.description}
+                </p>
+                <ul className="mt-6 space-y-2">
+                  {skill.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-baseline gap-3 font-mono text-sm text-ink/80"
+                    >
+                      <span className="text-accent">—</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="mt-16 max-w-xl text-[15px] leading-8 text-muted">
+            小さくつくって早く出し、使われながら育てていく——
+            個人開発で身につけたこの進め方を、受託の仕事でも大切にしています。
+          </p>
+        </section>
+
+        {/* Contact */}
+        <section id="contact" className="border-t border-line py-24 scroll-mt-20">
+          <div className="mb-8 flex items-baseline gap-4">
+            <h2 className="font-serif text-2xl sm:text-3xl">お問い合わせ</h2>
+            <span className="font-mono text-xs uppercase tracking-widest text-muted">
+              Contact
+            </span>
+          </div>
+          <p className="max-w-xl text-[15px] leading-8 text-muted">
+            アプリ開発のご依頼・ご相談は、メールでお気軽にご連絡ください。
+            アイデアの段階からでも、一緒に形を考えます。
           </p>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="btn-gradient inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-semibold text-lg"
+            className="link-underline mt-8 inline-block font-mono text-lg sm:text-xl"
           >
-            <Mail size={20} />
-            無料で相談する
+            {CONTACT_EMAIL}
           </a>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      {/* Stats */}
-      <section className="px-6 py-12 bg-[#111111] border-y border-white/5">
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-6 text-center">
-          {stats.map((s) => (
-            <div key={s.label}>
-              <p className="text-4xl sm:text-5xl font-bold text-gradient mb-1">
-                {s.value}
-              </p>
-              <p className="text-sm text-gray-400">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Works */}
-      <section className="px-6 py-24 max-w-6xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-          制作実績
-        </h2>
-        <p className="text-gray-400 text-center mb-16 text-lg">
-          個人開発でリリースしたプロダクト
-        </p>
-
-        {/* iOS */}
-        <div className="mb-16">
-          <h3 className="text-lg font-semibold mb-8 text-gray-300 flex items-center gap-3">
-            <Smartphone size={18} className="text-violet-400" />
-            iOSアプリ — App Store公開中
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {iosWorks.map((work) => (
-              <WorkCard key={work.title} work={work} />
-            ))}
-          </div>
-        </div>
-
-        {/* Web */}
-        <div>
-          <h3 className="text-lg font-semibold mb-8 text-gray-300 flex items-center gap-3">
-            <Globe size={18} className="text-violet-400" />
-            Webアプリ
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
-            {webWorks.map((work) => (
-              <WorkCard key={work.title} work={work} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Skills */}
-      <section className="px-6 py-24 bg-[#111111]">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-            技術スタック
-          </h2>
-          <p className="text-gray-400 text-center mb-14 text-lg">
-            企画から App Store 公開まで一人で完結
+      <footer className="border-t border-line">
+        <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-8">
+          <p className="font-mono text-xs text-muted">
+            © {new Date().getFullYear()} Yoshimichi
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <SkillCard
-              title="iOSアプリ開発"
-              items={["SwiftUI", "SwiftData", "XcodeGen", "RevenueCat", "Google AdMob", "SPM"]}
-            />
-            <SkillCard
-              title="Webアプリ開発"
-              items={["Next.js", "TypeScript", "React", "Tailwind CSS", "Vercel", "Supabase"]}
-            />
-          </div>
+          <p className="font-mono text-xs text-muted">Based in Japan — JST</p>
         </div>
-      </section>
-
-      {/* Contact */}
-      <section className="px-6 py-24 max-w-2xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">お問い合わせ</h2>
-        <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-          アプリ開発のご依頼・ご相談はお気軽にどうぞ。
-          <br />
-          アイデアの段階から一緒に考えます。
-        </p>
-        <a
-          href={`mailto:${CONTACT_EMAIL}`}
-          className="btn-gradient inline-flex items-center gap-3 px-8 py-4 rounded-xl text-white font-semibold text-lg"
-        >
-          <Mail size={20} />
-          {CONTACT_EMAIL}
-        </a>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-white/5 py-8 text-center text-gray-600 text-sm">
-        © {new Date().getFullYear()} Yoshimichi. All rights reserved.
       </footer>
-    </main>
+    </>
   );
 }
