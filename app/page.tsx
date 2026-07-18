@@ -286,18 +286,32 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-line">
-        <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-8">
+        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-4 px-6 py-8">
           <p className="font-mono text-xs text-muted">
             © {new Date().getFullYear()} YK Digital Works
           </p>
-          <a
-            href={X_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-xs text-muted transition-colors hover:text-accent"
-          >
-            @YKDigitalWorks
-          </a>
+          <nav className="flex flex-wrap gap-6">
+            <a
+              href="/privacy"
+              className="font-mono text-xs text-muted transition-colors hover:text-accent"
+            >
+              プライバシーポリシー
+            </a>
+            <a
+              href="/support"
+              className="font-mono text-xs text-muted transition-colors hover:text-accent"
+            >
+              サポート
+            </a>
+            <a
+              href={X_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs text-muted transition-colors hover:text-accent"
+            >
+              @YKDigitalWorks
+            </a>
+          </nav>
         </div>
       </footer>
     </>
