@@ -67,9 +67,9 @@ export default function Home() {
             iOS &amp; Web Developer
           </p>
           <h1 className="fade-up mt-6 font-serif text-[1.9rem] leading-snug sm:text-5xl sm:leading-snug">
-            アイデアから、
+            思いついたら、
             <br />
-            App&nbsp;Storeまで届ける。
+            もう半分できている。
           </h1>
           <p className="fade-up-delay-1 mt-8 max-w-xl text-[15px] leading-8 text-muted">
             SwiftUIによるiOSアプリと、Next.jsによるWebアプリを個人開発でつくっているフリーランスエンジニアです。
