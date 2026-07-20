@@ -12,6 +12,15 @@ type Work = {
 
 const works: Work[] = [
   {
+    title: "AIチャットボット導入サービス",
+    category: "Web — AIチャットボットSaaS",
+    description:
+      "医療機関・士業・EC・製造業など業種別にカスタマイズできるRAGベースのAIチャットボットSaaS。音声通話モードや有人エスカレーション、使用量に応じた管理画面まで備え、Stripeでのオンライン契約・課金導線までを一貫して構築した。",
+    url: "https://portfolio-three-orcin-92.vercel.app/",
+    tech: ["Next.js", "Claude API", "Supabase", "Stripe"],
+    linkLabel: "サイトを見る",
+  },
+  {
     title: "Glowmi",
     category: "iOS — AIスキンケア記録",
     description:
@@ -189,7 +198,7 @@ export default function Home() {
           </p>
           <p className="fade-up-delay-1 mt-8 font-mono text-xs text-muted tracking-wide">
             App Store公開 5本 <span className="text-line">/</span> リリース済み
-            7本 <span className="text-line">/</span> 多言語対応 4言語
+            8本 <span className="text-line">/</span> 多言語対応 4言語
           </p>
           <div className="fade-up-delay-2 mt-10 flex flex-wrap gap-x-8 gap-y-3">
             <a
