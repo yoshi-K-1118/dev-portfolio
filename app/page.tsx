@@ -1,4 +1,4 @@
-const CONTACT_EMAIL = "y.k199xtbma@gmail.com";
+const CONTACT_EMAIL = "info@ykdigitalworks.com";
 const X_URL = "https://x.com/YKDigitalWorks";
 
 type Work = {

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const CONTACT_EMAIL = "y.k199xtbma@gmail.com";
+export const CONTACT_EMAIL = "info@ykdigitalworks.com";
 export const X_URL = "https://x.com/YKDigitalWorks";
 
 export default function SubpageShell({
