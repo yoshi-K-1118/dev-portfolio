@@ -8,10 +8,15 @@ import SubpageShell, {
 export const metadata: Metadata = {
   title: "サポート | YK Digital Works",
   description:
-    "YK Digital Worksが公開するiOSアプリ(Glowmi、めしろぐ、Gomidashi、禁煙くん、FaceNote等)のサポート・お問い合わせページ。",
+    "YK Digital Worksが公開するiOSアプリ(Hairmi、Glowmi、めしろぐ、Gomidashi、禁煙くん、FaceNote等)のサポート・お問い合わせページ。",
 };
 
 const supportedApps = [
+  {
+    name: "Hairmi",
+    category: "頭皮ケア・抜け毛記録",
+    url: null,
+  },
   {
     name: "Glowmi",
     category: "AIスキンケア記録",
@@ -97,17 +102,26 @@ export default function SupportPage() {
           <ul className="space-y-3">
             {supportedApps.map((app) => (
               <li key={app.name} className="flex flex-wrap items-baseline gap-x-4">
-                <a
-                  href={app.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-underline font-serif text-lg text-ink"
-                >
-                  {app.name}
-                </a>
+                {app.url ? (
+                  <a
+                    href={app.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-underline font-serif text-lg text-ink"
+                  >
+                    {app.name}
+                  </a>
+                ) : (
+                  <span className="font-serif text-lg text-ink">{app.name}</span>
+                )}
                 <span className="font-mono text-xs text-muted tracking-wide">
                   iOS — {app.category}
                 </span>
+                {!app.url && (
+                  <span className="font-mono text-xs text-accent tracking-wide">
+                    近日公開・審査中
+                  </span>
+                )}
               </li>
             ))}
           </ul>
@@ -147,8 +161,8 @@ export default function SupportPage() {
           <div className="mt-6 space-y-4 text-[15px] leading-8 text-muted">
             <p>
               This is the support page for iOS apps published by YK Digital
-              Works (Glowmi, Meshilog, Gomidashi, Kinen-kun, FaceNote, and
-              future releases). For questions, bug reports, or feature
+              Works (Hairmi, Glowmi, Meshilog, Gomidashi, Kinen-kun, FaceNote,
+              and future releases). For questions, bug reports, or feature
               requests, contact us at{" "}
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
