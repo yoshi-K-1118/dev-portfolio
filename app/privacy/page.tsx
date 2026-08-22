@@ -7,7 +7,7 @@ import SubpageShell, {
 export const metadata: Metadata = {
   title: "プライバシーポリシー | YK Digital Works",
   description:
-    "YK Digital Worksが公開するiOSアプリ(Glowmi、めしろぐ、Gomidashi、禁煙くん、FaceNote等)のプライバシーポリシー。",
+    "YK Digital Worksが提供するiOSアプリ(Glowmi、めしろぐ、Gomidashi、禁煙くん、FaceNote、Hairmi等)のプライバシーポリシー。",
 };
 
 const ENACTED = "2026年7月18日";
@@ -27,6 +27,14 @@ const apps: AppSummary[] = [
       "スキンケアの記録・写真・メモは端末内にのみ保存されます。AI肌分析を実行したときのみ、対象の写真が分析のために外部へ送信されます(第3条参照)。広告表示(Google AdMob)とサブスクリプション課金(RevenueCat)があります。",
     storageEn:
       "Skincare records, photos, and notes are stored only on your device. Only when you run an AI skin analysis, the selected photo is transmitted externally for analysis (see Section 3). The app shows ads (Google AdMob) and offers subscriptions (RevenueCat).",
+  },
+  {
+    name: "Hairmi",
+    nameEn: "Hairmi",
+    storage:
+      "頭皮の記録・写真・メモ、および睡眠・ストレス・飲酒などの生活習慣ログは端末内にのみ保存されます。AIによる頭皮分析・生活習慣の相関分析を実行したときのみ、対象のデータが分析のために外部へ送信されます(第3条参照)。広告表示(Google AdMob)とサブスクリプション課金(RevenueCat)があります。",
+    storageEn:
+      "Scalp records, photos, notes, and lifestyle logs (sleep, stress, alcohol) are stored only on your device. Only when you run an AI scalp analysis or lifestyle correlation analysis, the relevant data is transmitted externally for analysis (see Section 3). The app shows ads (Google AdMob) and offers subscriptions (RevenueCat).",
   },
   {
     name: "めしろぐ",
@@ -90,7 +98,7 @@ export default function PrivacyPage() {
     <SubpageShell labelEn="Privacy Policy" title="プライバシーポリシー">
       <p className="text-[15px] leading-8 text-muted">
         YK Digital Works(代表:加藤善道、以下「当方」)は、当方がApp
-        Storeで公開するすべてのiOSアプリ(以下「本アプリ」)における利用者の情報の取り扱いについて、以下のとおりプライバシーポリシーを定めます。本ポリシーは、現在公開中のアプリ(Glowmi、めしろぐ、Gomidashi、禁煙くん、FaceNote)および今後当方が公開するアプリに適用されます。
+        Storeで公開する、または公開を予定するすべてのiOSアプリ(以下「本アプリ」)における利用者の情報の取り扱いについて、以下のとおりプライバシーポリシーを定めます。本ポリシーは、当方が提供するアプリ(Glowmi、Hairmi、めしろぐ、Gomidashi、禁煙くん、FaceNote)および今後当方が公開するアプリに適用されます。
       </p>
       <p className="mt-4 font-mono text-xs text-muted">制定日: {ENACTED}</p>
 
@@ -109,7 +117,7 @@ export default function PrivacyPage() {
 
         <LegalSection title="第3条 AI分析のためのデータ送信">
           <p>
-            AI分析機能を持つアプリ(Glowmiなど)では、利用者が分析を実行したときに限り、対象の写真および関連する入力内容が、当方の中継サーバーを経由してAnthropic社のClaude
+            AI分析機能を持つアプリ(Glowmi、Hairmiなど)では、利用者が分析を実行したときに限り、対象の写真・生活習慣ログなど関連する入力内容が、当方の中継サーバーを経由してAnthropic社のClaude
             APIに送信されます。送信されたデータは分析結果の生成のみに使用され、当方のサーバーに保存されることはありません。Anthropic社におけるデータの取り扱いは、同社のプライバシーポリシーに従います。
           </p>
         </LegalSection>
@@ -125,7 +133,7 @@ export default function PrivacyPage() {
 
         <LegalSection title="第5条 課金情報について">
           <p>
-            サブスクリプション等のアプリ内課金があるアプリ(Glowmiなど)では、決済はAppleによって処理されます。当方がクレジットカード情報等の決済情報を取得することはありません。課金状態の管理にはRevenueCatを利用しており、匿名の識別子と購入履歴のみが扱われます。
+            サブスクリプション等のアプリ内課金があるアプリ(Glowmi、Hairmiなど)では、決済はAppleによって処理されます。当方がクレジットカード情報等の決済情報を取得することはありません。課金状態の管理にはRevenueCatを利用しており、匿名の識別子と購入履歴のみが扱われます。
           </p>
         </LegalSection>
 
@@ -208,10 +216,11 @@ export default function PrivacyPage() {
           </h2>
           <p className="mt-6 text-[15px] leading-8 text-muted">
             YK Digital Works (Representative: Yoshimichi Kato, &ldquo;we&rdquo;)
-            publishes this Privacy Policy for all iOS apps we distribute on the
-            App Store (&ldquo;the Apps&rdquo;), including Glowmi, Meshilog,
-            Gomidashi, Kinen-kun, FaceNote, and any apps we release in the
-            future. Effective date: July 18, 2026.
+            publishes this Privacy Policy for all iOS apps we distribute or
+            plan to distribute on the App Store (&ldquo;the Apps&rdquo;),
+            including Glowmi, Hairmi, Meshilog, Gomidashi, Kinen-kun, FaceNote,
+            and any apps we release in the future. Effective date: July 18,
+            2026.
           </p>
 
           <div className="mt-8">
@@ -234,9 +243,10 @@ export default function PrivacyPage() {
 
             <LegalSection title="3. Data transmitted for AI analysis">
               <p>
-                In apps with AI analysis features (such as Glowmi), only when
-                you run an analysis, the selected photo and related input are
-                sent through our relay server to Anthropic&rsquo;s Claude API.
+                In apps with AI analysis features (such as Glowmi and Hairmi),
+                only when you run an analysis, the selected photo, lifestyle
+                logs, and related input are sent through our relay server to
+                Anthropic&rsquo;s Claude API.
                 The data is used solely to generate the analysis result and is
                 never stored on our server. Anthropic&rsquo;s handling of the
                 data is governed by its own privacy policy.
@@ -256,8 +266,8 @@ export default function PrivacyPage() {
 
             <LegalSection title="5. Purchases">
               <p>
-                In apps with in-app purchases (such as Glowmi), payments are
-                processed by Apple. We never receive your payment details.
+                In apps with in-app purchases (such as Glowmi and Hairmi),
+                payments are processed by Apple. We never receive your payment details.
                 Subscription status is managed via RevenueCat using an
                 anonymous identifier and purchase history only.
               </p>
