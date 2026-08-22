@@ -9,7 +9,7 @@ type Work = {
   platform: Platform;
   category: string;
   description: string;
-  url: string;
+  url?: string;
   tech: string[];
   linkLabel: string;
 };
@@ -34,6 +34,15 @@ const works: Work[] = [
     url: "https://apps.apple.com/app/glowmi-ai%E8%82%8C%E8%A8%BA%E6%96%AD-%E5%B0%8F%E9%A1%94%E7%BF%92%E6%85%A3/id6763681880",
     tech: ["SwiftUI", "Claude API", "RevenueCat", "SwiftData"],
     linkLabel: "App Store",
+  },
+  {
+    title: "Hairmi",
+    platform: "iOS",
+    category: "頭皮・ヘアケア記録",
+    description:
+      "産後の抜け毛や更年期のボリューム低下に悩む女性向けの頭皮・ヘアケア記録アプリ。朝晩の頭皮記録に対してClaude AIが睡眠・ストレスとの相関を分析し、Before/After写真比較やタイムラプス動画で変化を可視化する。App Store公開に向けて開発中。",
+    tech: ["SwiftUI", "SwiftData", "Claude API", "RevenueCat"],
+    linkLabel: "開発中",
   },
   {
     title: "めしろぐ",
@@ -101,6 +110,60 @@ const tabs = ["すべて", "iOS", "Web"] as const;
 type Tab = (typeof tabs)[number];
 
 function WorkRow({ work, index }: { work: Work; index: number }) {
+  const hasLink = Boolean(work.url);
+
+  const content = (
+    <>
+      <span className="font-mono text-sm text-muted pt-1">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <div className="max-w-2xl">
+        <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+          <h3
+            className={`font-serif text-xl sm:text-2xl transition-colors ${
+              hasLink ? "group-hover:text-accent" : ""
+            }`}
+          >
+            {work.title}
+          </h3>
+          <span className="font-mono text-xs text-muted tracking-wide">
+            {work.platform} — {work.category}
+          </span>
+        </div>
+        <p className="mt-3 text-[15px] leading-7 text-muted">
+          {work.description}
+        </p>
+        <p className="mt-3 font-mono text-xs text-muted/80">
+          {work.tech.join(" · ")}
+        </p>
+      </div>
+      {hasLink ? (
+        <>
+          <span className="hidden sm:flex items-start pt-1 font-mono text-sm text-muted transition-all group-hover:text-accent group-hover:translate-x-1">
+            {work.linkLabel} ↗
+          </span>
+          <span className="sm:hidden font-mono text-xs text-accent">
+            {work.linkLabel} ↗
+          </span>
+        </>
+      ) : (
+        <span className="hidden sm:flex items-start pt-1 font-mono text-xs text-muted/70">
+          {work.linkLabel}
+        </span>
+      )}
+    </>
+  );
+
+  if (!hasLink) {
+    return (
+      <li className="border-t border-line">
+        <div className="grid gap-y-3 py-9 sm:grid-cols-[3.5rem_1fr_auto] sm:gap-x-6">
+          {content}
+        </div>
+      </li>
+    );
+  }
+
   return (
     <li className="border-t border-line">
       <a
@@ -109,31 +172,7 @@ function WorkRow({ work, index }: { work: Work; index: number }) {
         rel="noopener noreferrer"
         className="group grid gap-y-3 py-9 sm:grid-cols-[3.5rem_1fr_auto] sm:gap-x-6"
       >
-        <span className="font-mono text-sm text-muted pt-1">
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <div className="max-w-2xl">
-          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-            <h3 className="font-serif text-xl sm:text-2xl transition-colors group-hover:text-accent">
-              {work.title}
-            </h3>
-            <span className="font-mono text-xs text-muted tracking-wide">
-              {work.platform} — {work.category}
-            </span>
-          </div>
-          <p className="mt-3 text-[15px] leading-7 text-muted">
-            {work.description}
-          </p>
-          <p className="mt-3 font-mono text-xs text-muted/80">
-            {work.tech.join(" · ")}
-          </p>
-        </div>
-        <span className="hidden sm:flex items-start pt-1 font-mono text-sm text-muted transition-all group-hover:text-accent group-hover:translate-x-1">
-          {work.linkLabel} ↗
-        </span>
-        <span className="sm:hidden font-mono text-xs text-accent">
-          {work.linkLabel} ↗
-        </span>
+        {content}
       </a>
     </li>
   );
