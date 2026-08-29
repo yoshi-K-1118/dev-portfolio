@@ -8,7 +8,7 @@ import SubpageShell, {
 export const metadata: Metadata = {
   title: "サポート | YK Digital Works",
   description:
-    "YK Digital Worksが公開するiOSアプリ(Hairmi、Glowmi、めしろぐ、Gomidashi、禁煙くん、FaceNote等)のサポート・お問い合わせページ。",
+    "YK Digital Worksが公開するiOSアプリ(Hairmi、Glowmi、荷待ちキロッカー、めしろぐ、Gomidashi、禁煙くん、FaceNote等)のサポート・お問い合わせページ。",
 };
 
 const supportedApps = [
@@ -21,6 +21,11 @@ const supportedApps = [
     name: "Glowmi",
     category: "AIスキンケア記録",
     url: "https://apps.apple.com/app/glowmi-ai%E8%82%8C%E8%A8%BA%E6%96%AD-%E5%B0%8F%E9%A1%94%E7%BF%92%E6%85%A3/id6763681880",
+  },
+  {
+    name: "荷待ちキロッカー",
+    category: "荷待ち・待機時間の記録",
+    url: null,
   },
   {
     name: "めしろぐ",
