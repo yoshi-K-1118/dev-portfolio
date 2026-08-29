@@ -45,6 +45,15 @@ const works: Work[] = [
     linkLabel: "開発中",
   },
   {
+    title: "荷待ちキロッカー",
+    platform: "iOS",
+    category: "物流・荷待ち記録",
+    description:
+      "トラック運転手向けに、施設での荷待ち時間を位置情報で自動検知し、ほぼ操作なしで記録するアプリ。記録は荷主への待機時間請求の証拠資料となるため補正履歴を残す設計とし、走行中はUIをロックする。広告は記録画面に出さず、課金もStoreKit 2による買い切り一つのみ。App Store公開に向けて開発中。",
+    tech: ["SwiftUI", "SwiftData", "Core Location", "StoreKit 2"],
+    linkLabel: "開発中",
+  },
+  {
     title: "めしろぐ",
     platform: "iOS",
     category: "食事ログ",
