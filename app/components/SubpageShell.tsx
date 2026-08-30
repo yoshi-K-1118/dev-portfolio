@@ -53,6 +53,12 @@ export default function SubpageShell({
               プライバシーポリシー
             </Link>
             <Link
+              href="/terms"
+              className="font-mono text-xs text-muted transition-colors hover:text-accent"
+            >
+              利用規約
+            </Link>
+            <Link
               href="/support"
               className="font-mono text-xs text-muted transition-colors hover:text-accent"
             >

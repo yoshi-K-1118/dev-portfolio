@@ -174,6 +174,12 @@ export default function Home() {
               プライバシーポリシー
             </a>
             <a
+              href="/terms"
+              className="font-mono text-xs text-muted transition-colors hover:text-accent"
+            >
+              利用規約
+            </a>
+            <a
               href="/support"
               className="font-mono text-xs text-muted transition-colors hover:text-accent"
             >
