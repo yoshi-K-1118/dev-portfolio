@@ -21,7 +21,7 @@ const works: Work[] = [
     category: "AIチャットボットSaaS",
     description:
       "医療機関・士業・EC・製造業など業種別にカスタマイズできるRAGベースのAIチャットボットSaaS。音声通話モードや有人エスカレーション、使用量に応じた管理画面まで備え、Stripeでのオンライン契約・課金導線までを一貫して構築した。",
-    url: "https://portfolio-three-orcin-92.vercel.app/",
+    url: "https://chatbot.ykdigitalworks.com/",
     tech: ["Next.js", "Claude API", "Supabase", "Stripe"],
     linkLabel: "サイトを見る",
   },
