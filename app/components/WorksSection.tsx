@@ -40,9 +40,10 @@ const works: Work[] = [
     platform: "iOS",
     category: "頭皮・ヘアケア記録",
     description:
-      "産後の抜け毛や更年期のボリューム低下に悩む女性向けの頭皮・ヘアケア記録アプリ。朝晩の頭皮記録に対してClaude AIが睡眠・ストレスとの相関を分析し、Before/After写真比較やタイムラプス動画で変化を可視化する。App Store公開に向けて開発中。",
+      "産後の抜け毛や更年期のボリューム低下に悩む女性向けの頭皮・ヘアケア記録アプリ。朝晩の頭皮記録に対してClaude AIが睡眠・ストレスとの相関を分析し、Before/After写真比較やタイムラプス動画で変化を可視化する。",
+    url: "https://apps.apple.com/app/hairmi-%E9%A0%AD%E7%9A%AE%E3%82%B1%E3%82%A2-%E6%8A%9C%E3%81%91%E6%AF%9B-%E8%82%B2%E6%AF%9B%E8%A8%98%E9%8C%B2/id6774821384",
     tech: ["SwiftUI", "SwiftData", "Claude API", "RevenueCat"],
-    linkLabel: "開発中",
+    linkLabel: "App Store",
   },
   {
     title: "荷待ちキロッカー",

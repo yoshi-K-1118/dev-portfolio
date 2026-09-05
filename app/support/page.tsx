@@ -15,7 +15,7 @@ const supportedApps = [
   {
     name: "Hairmi",
     category: "頭皮ケア・抜け毛記録",
-    url: null,
+    url: "https://apps.apple.com/app/hairmi-%E9%A0%AD%E7%9A%AE%E3%82%B1%E3%82%A2-%E6%8A%9C%E3%81%91%E6%AF%9B-%E8%82%B2%E6%AF%9B%E8%A8%98%E9%8C%B2/id6774821384",
   },
   {
     name: "Glowmi",
