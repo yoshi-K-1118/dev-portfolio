@@ -76,8 +76,8 @@ export default function Home() {
             企画・設計・開発からストア申請、リリース後の改善まで、一人で完結して手がけます。
           </p>
           <p className="fade-up-delay-1 mt-8 font-mono text-xs text-muted tracking-wide">
-            App Store公開 5本 <span className="text-line">/</span> リリース済み
-            8本 <span className="text-line">/</span> 多言語対応 4言語
+            App Store公開 7本 <span className="text-line">/</span> リリース済み
+            10本 <span className="text-line">/</span> 多言語対応 4言語
           </p>
           <div className="fade-up-delay-2 mt-10 flex flex-wrap gap-x-8 gap-y-3">
             <a

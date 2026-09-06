@@ -25,7 +25,7 @@ const supportedApps = [
   {
     name: "荷待ちキロッカー",
     category: "荷待ち・待機時間の記録",
-    url: null,
+    url: "https://apps.apple.com/app/%E8%8D%B7%E5%BE%85%E3%81%A1%E3%82%AD%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC/id6806569228",
   },
   {
     name: "めしろぐ",

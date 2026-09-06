@@ -29,11 +29,11 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "YK Digital Works — iOS / Webアプリ開発",
   description:
-    "SwiftUIによるiOSアプリからNext.jsによるWebアプリまで、企画・設計・開発・ストア公開までを一人で手がけるフリーランスエンジニアのポートフォリオ。App Store公開5本を含む7本のプロダクトを個人開発でリリース。",
+    "SwiftUIによるiOSアプリからNext.jsによるWebアプリまで、企画・設計・開発・ストア公開までを一人で手がけるフリーランスエンジニアのポートフォリオ。App Store公開7本を含む10本のプロダクトを個人開発でリリース。",
   openGraph: {
     title: "YK Digital Works — iOS / Webアプリ開発",
     description:
-      "企画からApp Store公開まで。個人開発で7本のプロダクトをリリースしてきたフリーランスエンジニアのポートフォリオ。",
+      "企画からApp Store公開まで。個人開発で10本のプロダクトをリリースしてきたフリーランスエンジニアのポートフォリオ。",
     type: "website",
     locale: "ja_JP",
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     creator: "@YKDigitalWorks",
     title: "YK Digital Works — iOS / Webアプリ開発",
     description:
-      "企画からApp Store公開まで。個人開発で7本のプロダクトをリリースしてきたフリーランスエンジニアのポートフォリオ。",
+      "企画からApp Store公開まで。個人開発で10本のプロダクトをリリースしてきたフリーランスエンジニアのポートフォリオ。",
   },
 };
 
