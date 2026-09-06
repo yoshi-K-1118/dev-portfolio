@@ -80,7 +80,7 @@ const works: Work[] = [
     platform: "iOS",
     category: "禁煙サポート",
     description:
-      "銘柄ごとのタバコ価格を登録し、禁煙によって節約できた金額をリアルタイムに計算。お金の面から禁煙の継続を後押しする。",
+      "銘柄(1箱の価格と本数)を登録し、1日の本数から週・月・年の節約額を算出するシンプルなアプリ。記録や通知の機能はあえて持たず、金額を示すところで止めている。",
     url: "https://apps.apple.com/jp/app/%E7%A6%81%E7%85%99%E3%81%8F%E3%82%93/id6760255111",
     tech: ["SwiftUI", "Google AdMob"],
     linkLabel: "App Store",

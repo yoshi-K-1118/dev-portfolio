@@ -66,9 +66,9 @@ const apps: AppSummary[] = [
     name: "禁煙くん",
     nameEn: "Kinen-kun",
     storage:
-      "禁煙記録・タバコ価格の設定は端末内にのみ保存され、外部への送信はありません。広告表示(Google AdMob)があります。",
+      "登録したタバコの銘柄(名称・1箱の価格・本数)は端末内にのみ保存され、外部への送信はありません。広告表示(Google AdMob)があります。",
     storageEn:
-      "Your quit-smoking records and cigarette price settings are stored only on your device and are never transmitted externally. The app shows ads (Google AdMob).",
+      "The cigarette brands you register (name, price per pack, cigarettes per pack) are stored only on your device and are never transmitted externally. The app shows ads (Google AdMob).",
   },
   {
     name: "FaceNote",
