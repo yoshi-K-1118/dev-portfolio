@@ -7,7 +7,7 @@ import SubpageShell, {
 export const metadata: Metadata = {
   title: "プライバシーポリシー | YK Digital Works",
   description:
-    "YK Digital Worksが提供するiOSアプリ(Glowmi、Hairmi、荷待ちキロッカー、めしろぐ、Gomidashi、禁煙くん、FaceNote等)のプライバシーポリシー。",
+    "YK Digital Worksが提供するiOSアプリ(Glowmi、Hairmi、荷待ちキロッカー、めしろぐ、Gomidashi、禁煙くん、FaceNote、SubsManager等)のプライバシーポリシー。",
 };
 
 const ENACTED = "2026年7月18日";
@@ -77,6 +77,14 @@ const apps: AppSummary[] = [
       "名刺画像・商談メモは端末内にのみ保存され、外部への送信はありません。広告表示(Google AdMob)があります。",
     storageEn:
       "Business card images and meeting notes are stored only on your device and are never transmitted externally. The app shows ads (Google AdMob).",
+  },
+  {
+    name: "SubsManager",
+    nameEn: "SubsManager",
+    storage:
+      "サブスクリプションの情報(サービス名・金額・カテゴリ等)は端末内にのみ保存され、外部への送信はありません。広告表示(Google AdMob)があります。",
+    storageEn:
+      "Subscription data (service name, amount, category, etc.) is stored only on your device and is never transmitted externally. The app shows ads (Google AdMob).",
   },
 ];
 
