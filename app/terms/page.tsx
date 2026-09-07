@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "利用規約 | YK Digital Works",
   description:
     "YK Digital Worksが提供するiOSアプリ(Glowmi、Hairmi、荷待ちキロッカー、めしろぐ、Gomidashi、禁煙くん、FaceNote、SubsManager等)の利用規約。",
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 const ENACTED = "2026年8月30日";

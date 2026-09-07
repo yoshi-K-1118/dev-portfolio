@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "プライバシーポリシー | YK Digital Works",
   description:
     "YK Digital Worksが提供するiOSアプリ(Glowmi、Hairmi、荷待ちキロッカー、めしろぐ、Gomidashi、禁煙くん、FaceNote、SubsManager等)のプライバシーポリシー。",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 const ENACTED = "2026年7月18日";

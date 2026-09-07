@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Shippori_Mincho, IBM_Plex_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SITE_URL } from "./site";
 import "./globals.css";
 
 const notoSansJP = Noto_Sans_JP({
@@ -27,13 +28,19 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "YK Digital Works — iOS / Webアプリ開発",
   description:
     "SwiftUIによるiOSアプリからNext.jsによるWebアプリまで、企画・設計・開発・ストア公開までを一人で手がけるフリーランスエンジニアのポートフォリオ。App Store公開7本を含む10本のプロダクトを個人開発でリリース。",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "YK Digital Works — iOS / Webアプリ開発",
     description:
       "企画からApp Store公開まで。個人開発で10本のプロダクトをリリースしてきたフリーランスエンジニアのポートフォリオ。",
+    url: "/",
+    siteName: "YK Digital Works",
     type: "website",
     locale: "ja_JP",
   },

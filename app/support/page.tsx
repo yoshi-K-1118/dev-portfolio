@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "サポート | YK Digital Works",
   description:
     "YK Digital Worksが公開するiOSアプリ(Hairmi、Glowmi、荷待ちキロッカー、めしろぐ、Gomidashi、禁煙くん、FaceNote、SubsManager等)のサポート・お問い合わせページ。",
+  alternates: {
+    canonical: "/support",
+  },
 };
 
 const supportedApps = [
