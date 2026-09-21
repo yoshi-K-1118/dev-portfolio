@@ -15,7 +15,9 @@ export const metadata: Metadata = {
 
 const ENACTED = "2026年7月18日";
 // 荷待ちキロッカーの追加にあたり、位置情報・動作データの条を新設した。
-const REVISED = "2026年8月29日";
+// Scanmi・Fastmi・Kokyakumi の追加にあたり、第3条をカメラ・連絡先・マイク・
+// 生体認証まで広げた。アプリを足すときは、この条とアプリ別の要約の両方を見ること。
+const REVISED = "2026年9月21日";
 
 type AppSummary = {
   name: string;
@@ -25,6 +27,30 @@ type AppSummary = {
 };
 
 const apps: AppSummary[] = [
+  {
+    name: "Kokyakumi",
+    nameEn: "Kokyakumi",
+    storage:
+      "お客様の情報(呼び名・本名・連絡先・誕生日・好み・メモ・タグ)、接客の記録(日時・種別・金額・売掛・メモ)、紐付けたSNSのアカウント名、在籍している店舗の情報は、端末内にのみ保存され、外部への送信はありません。保存ファイルにはiOSのファイル保護(完全な保護)を適用しており、端末がロックされている間は読み出せません。iCloud等との同期も行いません。メモの音声入力は端末内での変換のみを行い、音声・変換結果ともに外部へ送信しません(第3条参照)。広告表示(Google AdMob)、買い切りおよびサブスクリプションのアプリ内課金があります。",
+    storageEn:
+      "Customer information (nickname, real name, contact details, birthday, preferences, notes, tags), visit records (date, type, amounts, receivables, notes), linked social account names, and the shops you work at are stored only on your device and are never transmitted externally. The data file uses iOS complete file protection, so it cannot be read while the device is locked, and the app does not sync with iCloud or any other cloud service. Voice input for memos is converted to text on-device only; neither the audio nor the result is transmitted externally (see Section 3). The app shows ads (Google AdMob) and offers a one-time in-app purchase and a subscription.",
+  },
+  {
+    name: "Scanmi",
+    nameEn: "Scanmi",
+    storage:
+      "撮影した書類の画像、読み取った文字、付けた名前やタグは端末内にのみ保存され、外部への送信はありません。文字の読み取り(OCR)は端末内で完結します。書類の撮影にカメラを利用し、名刺から新しい連絡先を作成する機能を使ったときに限り連絡先への書き込みを行います(既存の連絡先を読み取ることはありません。第3条参照)。本アプリはネットワーク通信を一切行わず、広告およびアプリ内課金はありません。",
+    storageEn:
+      "The document images you capture, the text recognized from them, and any names or tags you add are stored only on your device and are never transmitted externally. Text recognition (OCR) is performed entirely on-device. The camera is used to capture documents, and write access to Contacts is used only when you create a new contact from a scanned business card; the app never reads your existing contacts (see Section 3). The app makes no network requests at all and contains no advertising or in-app purchases.",
+  },
+  {
+    name: "Fastmi",
+    nameEn: "Fastmi",
+    storage:
+      "ファスティングの記録(開始時刻・目標の長さ・終了時刻)、水分と回復期の記録、および設定は端末内にのみ保存され、外部への送信はありません。目標の達成・折り返し地点・水分のリマインダーに通知を利用します。通知の内容は端末内で組み立てられ、外部へ送信されることはありません。広告表示(Google AdMob)と買い切りのアプリ内課金があります。",
+    storageEn:
+      "Fasting records (start time, goal duration, end time), hydration and recovery records, and settings are stored only on your device and are never transmitted externally. Notifications are used for goal completion, the halfway point, and hydration reminders; their content is composed on-device and is never transmitted externally. The app shows ads (Google AdMob) and offers a one-time in-app purchase.",
+  },
   {
     name: "Glowmi",
     nameEn: "Glowmi",
@@ -138,7 +164,7 @@ export default function PrivacyPage() {
           </p>
         </LegalSection>
 
-        <LegalSection title="第3条 位置情報と動作データについて">
+        <LegalSection title="第3条 位置情報・端末の機能の利用について">
           <p>
             一部のアプリ(荷待ちキロッカー)では、滞在した地点を記録するために位置情報を利用します。取得するのは、到着・出発した地点の緯度経度と測位精度、およびその時刻です。施設への到着と出発を自動で記録すること、および記録した地点を地図アプリで確認できるようにすることが利用目的です。
           </p>
@@ -156,6 +182,22 @@ export default function PrivacyPage() {
           </p>
           <p>
             位置情報の利用は、iOSの「設定」→「プライバシーとセキュリティ」→「位置情報サービス」からいつでも停止できます。停止した場合でも、手動での記録機能はすべて利用できます。
+          </p>
+          <p>
+            <strong>カメラ。</strong>
+            一部のアプリ(Scanmi)では、書類を撮影するためにカメラを利用します。撮影した画像は端末内にのみ保存され、外部へ送信されることはありません。
+          </p>
+          <p>
+            <strong>連絡先。</strong>
+            一部のアプリ(Scanmi)では、名刺から新しい連絡先を作成する機能を利用したときに限り、連絡先への書き込みを行います。既存の連絡先を読み取ることはありません。
+          </p>
+          <p>
+            <strong>マイクと音声認識。</strong>
+            一部のアプリ(Kokyakumi)では、メモを声で入力するためにマイクと音声認識を利用します。音声から文字への変換は端末内でのみ行い(オンデバイス音声認識)、音声・変換結果のいずれも外部へ送信しません。端末が端末内での変換に対応していない場合、音声入力の機能自体を提供しません(外部のサーバーへ音声を送ることはありません)。
+          </p>
+          <p>
+            <strong>生体認証。</strong>
+            一部のアプリ(Scanmi、Kokyakumi)では、保存した内容を他の人に見られないようにするため、アプリのロック解除にFace ID / Touch IDを利用します。生体情報はAppleのSecure Enclaveで処理され、当方が取得することはありません。
           </p>
         </LegalSection>
 
@@ -286,7 +328,7 @@ export default function PrivacyPage() {
               </p>
             </LegalSection>
 
-            <LegalSection title="3. Location and motion data">
+            <LegalSection title="3. Location and device features">
               <p>
                 Some apps (Nimachi Kirokker) use location data to record the
                 places where you stay. We collect the latitude, longitude, and
@@ -319,6 +361,31 @@ export default function PrivacyPage() {
                 You can stop location use at any time in iOS Settings → Privacy
                 &amp; Security → Location Services. All manual recording
                 features remain available.
+              </p>
+              <p>
+                <strong>Camera.</strong> Some apps (Scanmi) use the camera to
+                capture documents. Captured images are stored only on your
+                device and are never transmitted externally.
+              </p>
+              <p>
+                <strong>Contacts.</strong> Some apps (Scanmi) write to Contacts
+                only when you choose to create a new contact from a scanned
+                business card. The app never reads your existing contacts.
+              </p>
+              <p>
+                <strong>Microphone and speech recognition.</strong> Some apps
+                (Kokyakumi) use the microphone and speech recognition for voice
+                input in memo fields. Speech is converted to text on-device
+                only; neither the audio nor the resulting text is transmitted
+                externally. If your device does not support on-device
+                conversion, the voice input feature is not offered at all —
+                audio is never sent to a server.
+              </p>
+              <p>
+                <strong>Biometrics.</strong> Some apps (Scanmi, Kokyakumi) use
+                Face ID / Touch ID to unlock the app so that others cannot view
+                your saved content. Biometric data is processed by Apple&apos;s
+                Secure Enclave and is never accessible to us.
               </p>
             </LegalSection>
 
