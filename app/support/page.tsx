@@ -8,7 +8,7 @@ import SubpageShell, {
 export const metadata: Metadata = {
   title: "サポート | YK Digital Works",
   description:
-    "YK Digital Worksが公開するiOSアプリ(Hairmi、Glowmi、Kokyakumi、荷待ちキロッカー、めしろぐ、Gomidashi、禁煙くん、FaceNote、SubsManager等)のサポート・お問い合わせページ。",
+    "YK Digital Worksが公開するiOSアプリ(Hairmi、Glowmi、Kokyakumi、Scanmi、Fastmi、荷待ちキロッカー、めしろぐ、Gomidashi、禁煙くん、FaceNote、SubsManager等)のサポート・お問い合わせページ。",
   alternates: {
     canonical: "/support",
   },
@@ -16,10 +16,18 @@ export const metadata: Metadata = {
 
 const supportedApps = [
   {
-    // 審査中。url を入れるのは App Store に並んでから。
+    // 未公開のアプリは url を持たせない。入れるのは App Store に並んでから。
     // 先に入れると、ここから踏んだ人が 404 に着く。
     name: "Kokyakumi",
     category: "個人客の顧客管理",
+  },
+  {
+    name: "Scanmi",
+    category: "書類スキャン・文字起こし",
+  },
+  {
+    name: "Fastmi",
+    category: "ファスティングの記録",
   },
   {
     name: "Hairmi",
@@ -180,8 +188,9 @@ export default function SupportPage() {
           <div className="mt-6 space-y-4 text-[15px] leading-8 text-muted">
             <p>
               This is the support page for iOS apps published by YK Digital
-              Works (Hairmi, Glowmi, Kokyakumi, Nimachi Kirokker, Meshilog, Gomidashi,
-              Kinen-kun, FaceNote, SubsManager, and future releases). For questions, bug reports, or feature
+              Works (Hairmi, Glowmi, Kokyakumi, Scanmi, Fastmi, Nimachi Kirokker,
+              Meshilog, Gomidashi, Kinen-kun, FaceNote, SubsManager, and future
+              releases). For questions, bug reports, or feature
               requests, contact us at{" "}
               <a
                 href={`mailto:${CONTACT_EMAIL}`}

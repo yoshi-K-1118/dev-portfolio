@@ -37,6 +37,24 @@ const works: Work[] = [
     linkLabel: "審査中",
   },
   {
+    title: "Scanmi",
+    platform: "iOS",
+    category: "書類スキャン・文字起こし",
+    description:
+      "書類や名刺をカメラで取り込み、端末内の文字認識でテキストにして保存するアプリ。PDF への書き出し、切り直しと比率の補正まで備える。通信を一切行わず、取り込んだ書類が端末の外に出ない。",
+    tech: ["SwiftUI", "VisionKit", "Vision", "PDFKit"],
+    linkLabel: "近日公開",
+  },
+  {
+    title: "Fastmi",
+    platform: "iOS",
+    category: "ファスティングタイマー",
+    description:
+      "断食の経過と目標をタイマーで追い、水分・回復期の食事・体重・血圧まで一本で記録するアプリ。目標の時間が来ると自動で終わるので、超過に気づかないことがない。7言語対応。",
+    tech: ["SwiftUI", "SwiftData", "StoreKit 2", "AdMob"],
+    linkLabel: "近日公開",
+  },
+  {
     title: "Glowmi",
     platform: "iOS",
     category: "AIスキンケア記録",
