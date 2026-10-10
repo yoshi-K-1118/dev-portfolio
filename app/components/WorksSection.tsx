@@ -26,15 +26,14 @@ const works: Work[] = [
     linkLabel: "サイトを見る",
   },
   {
-    // 審査中。通ったら url に App Store のリンクを入れ、linkLabel を
-    // "App Store" に戻す。url が無い間は、リンクではなく札だけが出る。
     title: "Kokyakumi",
     platform: "iOS",
     category: "個人客の顧客管理",
     description:
       "接客業の方が、お客様を一人ずつ覚えておくための顧客管理アプリ。呼び名・好み・触れてはいけないこと・接客の記録・売掛をまとめて持ち、SNSの紐付けや売上の集計まで行う。すべて端末内に保存し、外部へ送信しない。日本語・英語・韓国語・繁体字中国語の4言語対応。",
+    url: "https://apps.apple.com/app/id6818886902",
     tech: ["SwiftUI", "SwiftData", "StoreKit 2", "AdMob"],
-    linkLabel: "審査中",
+    linkLabel: "App Store",
   },
   {
     title: "Scanmi",
