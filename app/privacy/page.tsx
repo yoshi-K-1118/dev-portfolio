@@ -17,7 +17,9 @@ const ENACTED = "2026年7月18日";
 // 荷待ちキロッカーの追加にあたり、位置情報・動作データの条を新設した。
 // Scanmi・Fastmi・Kokyakumi の追加にあたり、第3条をカメラ・連絡先・マイク・
 // 生体認証まで広げた。アプリを足すときは、この条とアプリ別の要約の両方を見ること。
-const REVISED = "2026年9月21日";
+// Fastmi に体重・血圧の記録を足したので、第7条（健康に関する記録）を新設した。
+// 測らない・評価しない・助言しないの三つは、機能を足すたびに確かめること。
+const REVISED = "2026年10月10日";
 
 type AppSummary = {
   name: string;
@@ -47,9 +49,9 @@ const apps: AppSummary[] = [
     name: "Fastmi",
     nameEn: "Fastmi",
     storage:
-      "ファスティングの記録(開始時刻・目標の長さ・終了時刻)、水分と回復期の記録、および設定は端末内にのみ保存され、外部への送信はありません。目標の達成・折り返し地点・水分のリマインダーに通知を利用します。通知の内容は端末内で組み立てられ、外部へ送信されることはありません。広告表示(Google AdMob)と買い切りのアプリ内課金があります。",
+      "ファスティングの記録(開始時刻・目標の長さ・終了時刻)、水分と回復期の記録、体の記録(体重・血圧・脈拍・メモ)、体格の情報(性別・年齢・身長・体重)、および設定は端末内にのみ保存され、外部への送信はありません。体の記録は利用者ご自身が体重計・血圧計で測った数値を入力していただくもので、本アプリが測定・評価することはありません(第7条参照)。ヘルスケア(HealthKit)との連携も行いません。目標の達成・折り返し地点・水分のリマインダーに通知を利用します。通知の内容は端末内で組み立てられ、外部へ送信されることはありません。広告表示(Google AdMob)と買い切りのアプリ内課金があります。記録した内容が広告に使われることはありません。",
     storageEn:
-      "Fasting records (start time, goal duration, end time), hydration and recovery records, and settings are stored only on your device and are never transmitted externally. Notifications are used for goal completion, the halfway point, and hydration reminders; their content is composed on-device and is never transmitted externally. The app shows ads (Google AdMob) and offers a one-time in-app purchase.",
+      "Fasting records (start time, goal duration, end time), hydration and recovery records, body readings (weight, blood pressure, pulse, notes), body profile (sex, age, height, weight), and settings are stored only on your device and are never transmitted externally. Body readings are numbers you read from your own scale or monitor and enter yourself; the app neither measures nor assesses them (see Section 7). The app does not integrate with Apple Health (HealthKit). Notifications are used for goal completion, the halfway point, and hydration reminders; their content is composed on-device and is never transmitted externally. The app shows ads (Google AdMob) and offers a one-time in-app purchase. Your records are never used for advertising.",
   },
   {
     name: "Glowmi",
@@ -223,7 +225,22 @@ export default function PrivacyPage() {
           </p>
         </LegalSection>
 
-        <LegalSection title="第7条 利用する第三者サービス">
+        <LegalSection title="第7条 健康に関する記録について">
+          <p>
+            一部のアプリ(Fastmi)では、体重・血圧・脈拍など健康に関わる数値を記録できます。これらは利用者ご自身が体重計・血圧計などで測定した数値を入力していただくものであり、本アプリが測定するものではありません。
+          </p>
+          <p>
+            本アプリは入力された数値を保存して表示するだけで、高い・低いといった評価や判定は行わず、医療的な助言も行いません。数値の意味については医師にご相談ください。服薬中の方や持病のある方はとくにお願いします。入力できる数値の範囲を設けている場合がありますが、これは桁の打ち間違いを弾くためのものであり、正常値の判定ではありません。
+          </p>
+          <p>
+            これらの記録は端末内にのみ保存され、外部サーバーへの送信はありません。広告にも使用されず、ヘルスケア(HealthKit)との連携も行いません。アプリを削除すると記録もあわせて削除されます。
+          </p>
+          <p>
+            本アプリは医療機器ではなく、診断・治療・予防を目的としたものではありません。妊娠中・授乳中の方、持病のある方、服薬中の方は、ファスティング等を始める前に医師にご相談ください。
+          </p>
+        </LegalSection>
+
+        <LegalSection title="第8条 利用する第三者サービス">
           <p>本アプリでは、アプリごとに以下の第三者サービスを利用しています。</p>
           <ul className="space-y-3">
             {thirdPartyServices.map((s) => (
@@ -245,7 +262,7 @@ export default function PrivacyPage() {
           </ul>
         </LegalSection>
 
-        <LegalSection title="第8条 アプリ別のデータの取り扱い">
+        <LegalSection title="第9条 アプリ別のデータの取り扱い">
           <ul className="space-y-6">
             {apps.map((app) => (
               <li key={app.name}>
@@ -259,26 +276,26 @@ export default function PrivacyPage() {
           </p>
         </LegalSection>
 
-        <LegalSection title="第9条 データの削除">
+        <LegalSection title="第10条 データの削除">
           <p>
             端末内のデータは、アプリを削除することですべて削除できます。サブスクリプションの解約は、iOSの「設定」→ Apple
             ID →「サブスクリプション」から行えます(アプリの削除だけでは解約されません)。
           </p>
         </LegalSection>
 
-        <LegalSection title="第10条 子どものプライバシー">
+        <LegalSection title="第11条 子どものプライバシー">
           <p>
             本アプリは13歳未満の子どもを対象としておらず、13歳未満の子どもから意図的に情報を収集することはありません。
           </p>
         </LegalSection>
 
-        <LegalSection title="第11条 ポリシーの変更">
+        <LegalSection title="第12条 ポリシーの変更">
           <p>
             本ポリシーの内容は、法令の変更やアプリの機能追加に応じて改定されることがあります。重要な変更がある場合は、本ページで告知します。
           </p>
         </LegalSection>
 
-        <LegalSection title="第12条 お問い合わせ">
+        <LegalSection title="第13条 お問い合わせ">
           <p>
             本ポリシーに関するお問い合わせは、以下の連絡先までお願いいたします。
           </p>
@@ -423,7 +440,35 @@ export default function PrivacyPage() {
               </p>
             </LegalSection>
 
-            <LegalSection title="7. Per-app data handling">
+            <LegalSection title="7. Health-related records">
+              <p>
+                Some apps (Fastmi) let you record health-related numbers such as
+                weight, blood pressure, and pulse. These are numbers you read
+                from your own scale or monitor and enter yourself. The app does
+                not measure anything.
+              </p>
+              <p>
+                The app only stores and displays what you enter. It does not
+                assess your numbers as high or low and gives no medical advice.
+                Ask a doctor what your numbers mean, especially if you take
+                medication or manage a condition. Where the app limits the range
+                of values you can enter, that limit exists to catch typos — it is
+                not a judgement about what is normal.
+              </p>
+              <p>
+                These records stay on your device. They are never sent to any
+                server, never used for advertising, and are not shared with Apple
+                Health (HealthKit). Deleting the app deletes them too.
+              </p>
+              <p>
+                These apps are not medical devices and are not intended to
+                diagnose, treat, or prevent any condition. Talk to a doctor
+                before fasting if you are pregnant, breastfeeding, managing a
+                condition, or taking medication.
+              </p>
+            </LegalSection>
+
+            <LegalSection title="8. Per-app data handling">
               <ul className="space-y-6">
                 {apps.map((app) => (
                   <li key={app.nameEn}>
@@ -436,7 +481,7 @@ export default function PrivacyPage() {
               </ul>
             </LegalSection>
 
-            <LegalSection title="8. Data deletion">
+            <LegalSection title="9. Data deletion">
               <p>
                 All on-device data can be deleted by removing the app. To
                 cancel a subscription, go to iOS Settings → Apple ID →
@@ -445,14 +490,14 @@ export default function PrivacyPage() {
               </p>
             </LegalSection>
 
-            <LegalSection title="9. Children's privacy">
+            <LegalSection title="10. Children's privacy">
               <p>
                 The Apps are not directed at children under 13, and we do not
                 knowingly collect information from children under 13.
               </p>
             </LegalSection>
 
-            <LegalSection title="10. Changes and contact">
+            <LegalSection title="11. Changes and contact">
               <p>
                 We may update this policy as laws change or app features are
                 added; significant changes will be announced on this page. For
