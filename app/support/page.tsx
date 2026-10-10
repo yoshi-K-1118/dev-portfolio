@@ -20,7 +20,7 @@ const supportedApps = [
     // 先に入れると、ここから踏んだ人が 404 に着く。
     name: "Kokyakumi",
     category: "個人客の顧客管理",
-    url: "https://apps.apple.com/app/id6818886902",
+    url: "https://apps.apple.com/jp/app/id6818886902",
   },
   {
     name: "Scanmi",
